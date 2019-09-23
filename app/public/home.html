@@ -27,9 +27,15 @@
       <hr />
       <h3>Answer a few basic questions.</h3>
       <h3>Then find the friend with the greatest compatibility!</h3>
-      <button class="btn btn-large btn-primary mt-5">
+      <button class="btn btn-large btn-primary mt-5" id="beginSurveyButton">
         <i class="fas fa-th-list mr-2"></i>Go To Survey
       </button>
     </div>
+
+    <script type="text/javascript">
+      $('#beginSurveyButton').on('click', () => {
+        window.open('/survey', '_self');
+      })
+    </script>
   </body>
 </html>
