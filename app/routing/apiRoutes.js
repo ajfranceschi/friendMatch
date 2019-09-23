@@ -33,10 +33,9 @@ module.exports = app => {
       question10
     ];
 
-
     let usersObjectsArray = [];
     let differencesArray = [];
-    let match = {}
+    let match = {};
 
     for (const userObject of friendsArray) {
       const userObjWithDiff = compareAnswers(userAnswersArray, userObject);
@@ -54,21 +53,19 @@ module.exports = app => {
       }
     }
 
-    // console.log(Math.min(...totalDifferencesArray));
-
     res.json(match);
   });
-
 };
 
 const compareAnswers = (userAnswers, friend) => {
-    let totalDifference = 0;
-    for (let i=0; i < userAnswers.length; i++) {
-      totalDifference = totalDifference + Math.abs(userAnswers[i]-friend.scores[i]);
-    }
-    return {
-      name: friend.name,
-      photo: friend.photo,
-      difference: totalDifference
-    };
+  let totalDifference = 0;
+  for (let i = 0; i < userAnswers.length; i++) {
+    totalDifference =
+      totalDifference + Math.abs(userAnswers[i] - friend.scores[i]);
+  }
+  return {
+    name: friend.name,
+    photo: friend.photo,
+    difference: totalDifference
   };
+};
