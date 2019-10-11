@@ -25,20 +25,21 @@
     <div class="container pt-3">
       <h1>Survey</h1>
       <hr />
-      <div class="aboutSection">
-        <h3>About You</h3>
-        <div class="form-group">
-          <label for="name">Name (Required)</label>
-          <input type="text" id="name" class="form-control" required />
-        </div>
-        <div class="form-group">
-          <label for="pictureUrl">Link to Photo Image (Required)</label>
-          <input type="text" id="pictureUrl" class="form-control" required />
-        </div>
-      </div>
-      <hr />
       <div class="questionnaireSection">
         <form>
+          <div class="aboutSection">
+            <h3>About You</h3>
+            <div class="form-group">
+              <label for="name">Name (Required)</label>
+              <input type="text" id="name" class="form-control" required />
+            </div>
+            <div class="form-group">
+              <label for="pictureUrl">Link to Photo Image (Required)</label>
+              <input type="url" id="pictureUrl" class="form-control" required />
+            </div>
+          </div>
+          <hr />
+
           <div class="form-group">
             <h4>Question 1</h4>
             <label for="question1"
@@ -185,21 +186,43 @@
         </form>
       </div>
     </div>
-    <div class="modal fade" id="match-modal" tabindex="-1" role="dialog">
+
+<!--    MODAL -->
+    <div class="modal fade text-center" id="match-modal" tabindex="-1" role="dialog">
       <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="modalMatchTitle"></h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <div class="modal-header text-center">
+            <h3 class="modal-title text-center w-100 pl-1" id="modalMatchTitle"></h3>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
           <div class="modal-body">
-            <p id="match-body"></p>
-            <img src="" alt="Match Image" id="matchImage">
+            <h5 id="modalSubtitle" class="text-center"></h5>
+            <div class="row">
+              <div class="col-sm-12 col-md-6 text-center">
+                <p id="user-body"></p>
+                <img src="" alt="" id="userImage" class="img-fluid"/>
+              </div>
+              <div class="col-sm-12 col-md-6 text-center">
+                <p id="match-body"></p>
+                <img src="" alt="" id="matchImage" class="img-fluid" />
+              </div>
+            </div>
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-dismiss="modal"
+            >
+              Close
+            </button>
           </div>
         </div>
       </div>
